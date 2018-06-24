@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #map{
+        width: 1000px;
+        height: 600px;
+    }
+</style>
+<body>
+    <div id="map"></div>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=fAHbCgZLqyY8Kt1ZI9uud0dO5C2mNlkh"></script>     
+    <script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+
+</body>
+</html>
+<script>
+    var data = {"totalCount": 25, "rows": [{"event_log_id": 466761, "position": "\u8bfa\u5c14\u8d1d\u6d4b\u8bd5", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-03T17:30:15", "lnglat": "121.3903519513829,31.238947328821216", "monitor_info_id": 3226, "url": null, "address": "\u4e0a\u6d77\u5e02\u771f\u5317\u8def958\u53f72\u53f7\u697c404", "dept_id": 2, "aid": "863703036179617", "id": 1}, {"event_log_id": 467657, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-12T14:18:15", "lnglat": "121.3903519513829,31.238947328821216", "monitor_info_id": 3656, "url": null, "address": "\u771f\u5317\u8def958\u53f7", "dept_id": 2, "aid": "865820030148162", "id": 2}, {"event_log_id": 467964, "position": "\u8bfa\u5c14\u8d1d\u6d4b\u8bd5", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-22T13:01:16", "lnglat": "116.41138223022651,39.91847078555794", "monitor_info_id": 3844, "url": null, "address": "\u5317\u4eac\u5e02\u4e1c\u57ce\u533a\u4e1c\u534e\u95e8\u8857\u9053", "dept_id": 2, "aid": "863703036169758", "id": 4}, {"event_log_id": 466763, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-03T17:30:15", "lnglat": "121.390329,31.239005", "monitor_info_id": 3228, "url": null, "address": "\u4e0a\u6d77\u5e02\u771f\u5317\u8def958\u53f7", "dept_id": 2, "aid": "863703033662193", "id": 5}, {"event_log_id": 466762, "position": "\u8bfa\u8d1d\u5c14\u6d4b\u8bd5", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-03T17:30:15", "lnglat": "121.3903519513829,31.238947328821216", "monitor_info_id": 3227, "url": null, "address": "\u771f\u5317\u8def958\u53f7", "dept_id": 2, "aid": "863703031390649", "id": 6}, {"event_log_id": 466764, "position": "404", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-03T17:30:15", "lnglat": "121.753567697,31.1836881694", "monitor_info_id": 3229, "url": null, "address": "\u771f\u5317\u8def958\u53f7", "dept_id": 2, "aid": "863703031377190", "id": 8}, {"event_log_id": 467337, "position": "66", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-05-22T14:41:15", "lnglat": "121.3897640000,31.2388990000", "monitor_info_id": 3525, "url": null, "address": "\u4e0a\u6d77\u5e02\u9ec4\u6d66\u533a\u5357\u4eac\u4e1c\u8def\u8857\u9053", "dept_id": 2, "aid": "863703032793403", "id": 27}, {"event_log_id": 468002, "position": "404", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-23T11:30:16", "lnglat": "121.390714,31.238844", "monitor_info_id": 3878, "url": null, "address": "\u4e0a\u6d77\u5e02\u771f\u5317\u8def958\u53f7", "dept_id": 2, "aid": "863703036207889", "id": 32}, {"event_log_id": 467572, "position": "404", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-06T10:35:16", "lnglat": "121.3892430000,31.2388090000", "monitor_info_id": 3621, "url": null, "address": "\u4e2d\u56fd\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u771f\u5317\u8def930\u5f04-55\u53f7", "dept_id": 2, "aid": "863703031859254", "id": 39}, {"event_log_id": 466809, "position": "\u7535\u4fe1\u6d4b\u8bd5", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-04T15:00:16", "lnglat": "121.3903519513829,31.238947328821216", "monitor_info_id": 3255, "url": null, "address": "\u4e0a\u6d77\u771f\u5317\u8def958\u53f7", "dept_id": 2, "aid": "863703033983920", "id": 44}, {"event_log_id": 466819, "position": "202\u5ba4", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-04T16:35:16", "lnglat": "121.39072061596422,31.23886905930856", "monitor_info_id": 3261, "url": null, "address": "\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u771f\u5317\u8def958\u53f7", "dept_id": 2, "aid": "863703036325939", "id": 45}, {"event_log_id": 466991, "position": "\u79fb\u52a8\u5927\u53a6", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-28T10:44:15", "lnglat": "121.44826132567693,31.25003569900448", "monitor_info_id": 3341, "url": null, "address": "\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u957f\u5bff\u8def200\u53f7", "dept_id": 2, "aid": "865820030147651", "id": 49}, {"event_log_id": 466975, "position": "aaaa", "undo_alarmed": false, "alarm_type": "L", "testing": 0, "alarm_on": "2018-04-26T14:37:20", "lnglat": "121.44826132567693,31.25003569900448", "monitor_info_id": 3334, "url": null, "address": "\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u957f\u5bff\u8def200\u53f7", "dept_id": 2, "aid": "863703035183560", "id": 51}, {"event_log_id": 466987, "position": "\u79fb\u52a8\u5927\u53a6", "undo_alarmed": false, "alarm_type": "L", "testing": 0, "alarm_on": "2018-04-27T10:35:13", "lnglat": "121.44826132567693,31.25003569900448", "monitor_info_id": 3338, "url": null, "address": "\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u957f\u5bff\u8def200\u53f7", "dept_id": 2, "aid": "865820030147651", "id": 57}, {"event_log_id": 467014, "position": "404", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-05-02T09:45:16", "lnglat": "121.3903519513829,31.238947328821216", "monitor_info_id": 3350, "url": null, "address": "\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u957f\u98ce\u65b0\u6751\u8857\u9053\u5929\u5730\u79d1\u6280\u771f\u5317\u8def958\u53f7\u6d4b\u8bd5\u5730\u5740", "dept_id": 2, "aid": "863703035183560", "id": 58}, {"event_log_id": 466990, "position": "\u660a\u60f3\u667a\u80fd", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-04-28T10:02:15", "lnglat": "121.3970000000,31.2494000000", "monitor_info_id": 3340, "url": null, "address": "\u771f\u5317\u8def958", "dept_id": 2, "aid": "865820030288869", "id": 59}, {"event_log_id": 467900, "position": "\u8bfa\u5c14\u8d1d\u6d4b\u8bd5", "undo_alarmed": false, "alarm_type": "L", "testing": 0, "alarm_on": "2018-06-21T12:17:34", "lnglat": "116.41138223022651,39.91847078555794", "monitor_info_id": 3798, "url": null, "address": "\u5317\u4eac\u5e02\u4e1c\u57ce\u533a\u4e1c\u534e\u95e8\u8857\u9053", "dept_id": 2, "aid": "863703036169758", "id": 60}, {"event_log_id": 467127, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-05-12T14:09:16", "lnglat": "120.16549702750375,30.279175252003069", "monitor_info_id": 3386, "url": null, "address": "\u6d59\u6c5f\u676d\u5dde\u79fb\u52a8\u5927\u53a6", "dept_id": 2, "aid": "865820030313600", "id": 69}, {"event_log_id": 467128, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-05-12T14:13:16", "lnglat": "120.16549702750375,30.279175252003069", "monitor_info_id": 3387, "url": null, "address": "\u6d59\u6c5f\u676d\u5dde\u79fb\u52a8\u5927\u53a6", "dept_id": 2, "aid": "863703039133652", "id": 70}, {"event_log_id": 467574, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-06T11:30:16", "lnglat": "120.16549702750375,30.279175252003069", "monitor_info_id": 3623, "url": null, "address": "\u6d59\u6c5f\u676d\u5dde\u79fb\u52a8\u5927\u53a6", "dept_id": 2, "aid": "865820030288968", "id": 71}, {"event_log_id": 467878, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-20T14:13:16", "lnglat": "120.16549702750375,30.279175252003069", "monitor_info_id": 3788, "url": null, "address": "\u6d59\u6c5f\u676d\u5dde\u79fb\u52a8\u5927\u53a6", "dept_id": 2, "aid": "865820030315126", "id": 72}, {"event_log_id": 467605, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-07T14:18:16", "lnglat": "120.16549702750375,30.279175252003069", "monitor_info_id": 3633, "url": null, "address": "\u6d59\u6c5f\u676d\u5dde\u79fb\u52a8\u5927\u53a6", "dept_id": 2, "aid": "865820030288356", "id": 73}, {"event_log_id": 467443, "position": "404", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-05-30T15:06:16", "lnglat": "121.3892650000,31.2387760000", "monitor_info_id": 3579, "url": null, "address": "\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u66f9\u6768\u65b0\u6751\u8857\u9053\u4e0a\u6d77\u5e02\u666e\u9640\u533a\u66f9\u6768\u65b0\u6751\u8857\u9053", "dept_id": 2, "aid": "863703039237008", "id": 93}, {"event_log_id": 468000, "position": "123\u4f1a\u8bae\u5ba4", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-23T10:01:16", "lnglat": "121.3892710000,31.2387860000", "monitor_info_id": 3876, "url": null, "address": "\u7389\u9e1f\u8def12\u53f7", "dept_id": 8, "aid": "863703035184386", "id": 106}, {"event_log_id": 468001, "position": "", "undo_alarmed": false, "alarm_type": "M", "testing": 0, "alarm_on": "2018-06-23T11:00:16", "lnglat": "120.165466,30.279177", "monitor_info_id": 3877, "url": null, "address": "\u6d59\u6c5f\u676d\u5dde\u79fb\u52a8\u5927\u53a6", "dept_id": 2, "aid": "865820030313857", "id": 110}]};
+
+var rows = data.rows;
+var maxlng = rows[0].lnglat.split(',')[0],
+    minlng = rows[0].lnglat.split(',')[0],
+    maxlat = rows[0].lnglat.split(',')[1],
+    minlat = rows[0].lnglat.split(',')[1];
+    var m = new BMap.Map('map');
+var map = function(){
+    var markers = [];
+
+    rows.forEach(v=>{
+        var lng = v.lnglat.split(',')[0],
+            lat = v.lnglat.split(',')[1];
+
+            if(lng > maxlng){
+                maxlng = lng
+            }
+            if(lng < minlng){
+                minlng = lng
+            }
+            if(lat > maxlat){
+                maxlat = lat
+            }
+            if(lat < minlat){
+                minlat = lat
+            }
+            var marker = new BMap.Marker(new BMap.Point(lng,lat));  // 创建标注
+            markers.push(marker)
+    })
+    var centerDot = {lng:maxlng-parseInt(maxlng-minlng)/2,lat:maxlat - parseInt(maxlat-minlat)/2}
+    console.log(centerDot)
+    var point = new BMap.Point(centerDot.lng,centerDot.lat);  // 创建点坐标  
+    m.centerAndZoom(point, getZoom(maxlng,minlng,maxlat,minlat));                 // 初始化地图，设置中心点坐标和地图级别  
+    
+    m.enableScrollWheelZoom(true);
+
+
+    var markerClusterer = new BMapLib.MarkerClusterer(m, {markers:markers});
+}()
+function getZoom (maxLng, minLng, maxLat, minLat) {  
+    var zoom = ["50","100","200","500","1000","2000","5000","10000","20000","25000","50000","100000","200000","500000","1000000","2000000"]//级别18到3。  
+    var pointA = new BMap.Point(maxlng,maxlat);  // 创建点坐标A  
+    var pointB = new BMap.Point(minlng,minlat);  // 创建点坐标B  
+    var distance = m.getDistance(pointA,pointB).toFixed(1);  //获取两点距离,保留小数点后两位  
+    for (var i = 0,zoomLen = zoom.length; i < zoomLen; i++) {  
+        if(zoom[i] - distance > 0){  
+            return 18-i+3;//之所以会多3，是因为地图范围常常是比例尺距离的10倍以上。所以级别会增加3。  
+        }  
+    };  
+} 
+</script>
