@@ -29,6 +29,8 @@ var maxlng = rows[0].lnglat.split(',')[0],
     maxlat = rows[0].lnglat.split(',')[1],
     minlat = rows[0].lnglat.split(',')[1];
     var m = new BMap.Map('map');
+var opts = {height:200,width:100};
+var winTxt = '爱就像蓝天白云晴空万里突然暴风雨'
 var map = function(){
     var markers = [];
 
@@ -49,6 +51,9 @@ var map = function(){
                 minlat = lat
             }
             var marker = new BMap.Marker(new BMap.Point(lng,lat));  // 创建标注
+			marker = new BMap.Marker(new BMap.Point(lng,lat),{title:v.aid});
+			marker.winTxt = winTxt;
+            marker.addEventListener('click',getParams)
             markers.push(marker)
     })
     var centerDot = {lng:maxlng-parseInt(maxlng-minlng)/2,lat:maxlat - parseInt(maxlat-minlat)/2}
@@ -61,6 +66,19 @@ var map = function(){
 
     var markerClusterer = new BMapLib.MarkerClusterer(m, {markers:markers});
 }()
+function getParams(e){
+	var p = e.target;
+    openInfo(p.winTxt,p.point,p.getTitle())
+}
+ function openInfo (content, e) {
+    mapIndex = 19;
+    var point = new BMap.Point(e.lng, e.lat);
+    m.centerAndZoom(new BMap.Point(e.lng, e.lat), mapIndex);
+    var infoWindow = new BMap.InfoWindow(content); // 创建信息窗口对象
+    m.openInfoWindow(infoWindow, point); //开启信息窗口
+    // infoWindow.addEventListener('close',stopV())
+    console.log('窗口已开启')
+}
 function getZoom (maxLng, minLng, maxLat, minLat) {  
     var zoom = ["50","100","200","500","1000","2000","5000","10000","20000","25000","50000","100000","200000","500000","1000000","2000000"]//级别18到3。  
     var pointA = new BMap.Point(maxlng,maxlat);  // 创建点坐标A  
